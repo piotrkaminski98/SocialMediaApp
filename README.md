@@ -1,4 +1,4 @@
-# flutter_application_1
+# Social Media App
 
 A new Flutter project.
 
