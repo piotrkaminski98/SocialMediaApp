@@ -21,7 +21,6 @@ class _SignupScreenState extends State<SignupScreen> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _bioController.dispose();
     _usernameController.dispose();
   }
 
@@ -43,7 +42,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 color: primaryColor,
                 height: 64,
               ),
-              const SizedBox(height: 64),
+              const SizedBox(height: 48),
               // circular widget
               Stack(
                 children: [
@@ -57,9 +56,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     left: 80,
                     child: IconButton(
                       onPressed: () {},
-                      icon: const Icon(
-                        Icons.add_a_photo,
-                      ),
+                      icon: const Icon(Icons.add_a_photo),
                     ),
                   ),
                 ],
@@ -114,10 +111,11 @@ class _SignupScreenState extends State<SignupScreen> {
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   decoration: const ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(4)),
-                      ),
-                      color: blueColor),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(4)),
+                    ),
+                    color: blueColor,
+                  ),
                 ),
               ),
               const SizedBox(
@@ -131,7 +129,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 children: [
                   Container(
                     child: const Text("Don't have an account?"),
-                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 4),
                   ),
                   GestureDetector(
                     onTap: () {},
