@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/resources/auth_methods.dart';
-import 'package:flutter_application_1/screens/home_screen.dart';
+import 'package:flutter_application_1/responselive/mobile_screen_layout.dart';
+import 'package:flutter_application_1/responselive/responsive_layout_screen.dart';
+import 'package:flutter_application_1/responselive/web_screen_layout.dart';
+
 import 'package:flutter_application_1/screens/signup_screen.dart';
 import 'package:flutter_application_1/utils/colors.dart';
 import 'package:flutter_application_1/utils/utils.dart';
@@ -37,13 +40,26 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (res == 'success') {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const HomeScreen()));
+        MaterialPageRoute(builder: (context) => const ResponsiveLayout(
+          mobileScreenLayout: MobileScreenLayout(),
+          webScreenLayout: WebScreenLayout(),
+        ),
+        ),
+      );
     } else {
       showSnackBar(res, context);
     }
+
     setState(() {
       _isLoading = false;
     });
+  }
+
+  void navigateToSignUp() {
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => const SignupScreen()
+      ),
+    );
   }
 
   @override
