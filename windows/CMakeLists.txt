@@ -4,7 +4,7 @@ project(flutter_application_1 LANGUAGES CXX)
 set(BINARY_NAME "flutter_application_1")
 
 cmake_policy(SET CMP0063 NEW)
-
+twój stary
 set(CMAKE_INSTALL_RPATH "$ORIGIN/lib")
 
 # Configure build options.
